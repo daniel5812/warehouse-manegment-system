@@ -10,7 +10,7 @@ app.use(express.json())
 
 // בדיקת שרת
 app.get('/', (_req, res) => {
-  res.send('✅ VegiStock API is running!')
+  res.send('VegiStock API is running!')
 })
 
 // קבלת כל הפעולות (add/remove)
@@ -21,7 +21,7 @@ app.get('/api/items', async (_req, res) => {
     })
     res.json(items)
   } catch (error) {
-    console.error('❌ Failed to fetch items:', error)
+    console.error('Failed to fetch items:', error)
     res.status(500).json({ error: 'Internal server error' })
   }
 })
@@ -45,7 +45,7 @@ app.post('/api/items', async (req, res) => {
     })
     res.status(201).json(item)
   } catch (error) {
-    console.error('❌ Failed to create item:', error)
+    console.error('Failed to create item:', error)
     res.status(500).json({ error: 'Server error' })
   }
 })
@@ -71,7 +71,7 @@ app.post('/api/detect-image', async (req, res) => {
 
     res.status(201).json({ message: 'Image detection saved', item })
   } catch (error) {
-    console.error('❌ Failed to save detection result:', error)
+    console.error('Failed to save detection result:', error)
     res.status(500).json({ error: 'Server error' })
   }
 })
@@ -84,5 +84,5 @@ app.use('*', (_req, res) => {
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT}`)
+  console.log(`Server is running on http://localhost:${PORT}`)
 })
