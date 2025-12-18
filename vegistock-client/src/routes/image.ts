@@ -4,10 +4,6 @@ const router = express.Router()
 router.post('/detect-image', async (req, res) => {
   const { image } = req.body
 
-  // נניח שיש לך סקריפט Python בשם model.py שמקבל תמונה Base64
-  // נשלח אליו ונחזיר תוצאה
-
-  // לדוגמה: שמירה לקובץ זמני
   const base64Data = image.replace(/^data:image\/jpeg;base64,/, '')
   const fs = require('fs')
   const path = 'tmp.jpg'
